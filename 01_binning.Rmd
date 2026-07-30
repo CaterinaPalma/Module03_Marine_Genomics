@@ -1,5 +1,5 @@
 ---
-title: "01_binning"
+title: "Marine-Genomics-BBD"
 author: "CaterinaPalma"
 date: "2026-07-12"
 output: html_document
@@ -217,7 +217,7 @@ mkdir genomes
 We’ll build up the command in steps. First just get the while loop working
 
 ```bash 
-while read bin;do echo $bin;done < ../gtdbtk/genomes/bbd_topbins.txt
+while read bin;do echo $bin;done < ../gtdbtk/genome/bbd_topbins.txt
 ``` 
 
 ```bash
@@ -231,7 +231,7 @@ while read bin;do cp "../metabat/bins_bbd/${bin}.fa" genomes;done < ../checkm/bb
 #### Step 4. Check that it worked by listing files within the genomes directory. You should see one file for each of the bins: 
 
 ```bash 
-ls genomes
+ls genome
 ``` 
 
 #### Step 5. Make shell script 
@@ -261,8 +261,6 @@ Output: slurm-580
 ```bash
 squeue
 ```
-
-HEeeeeeeeeeerrrrerererererererererererereerererererererererererererererererererrereeererererererererererererere
 
 # Find and Anotate Genes with prokka 
 
@@ -432,10 +430,3 @@ grep 'PWY-5360' *.ec.report
 
 How many bins contain the pathway PWY-5360? one - metabat.33 
 What family (in a taxonomic sense) do these bins belong to? f__Arcobacteraceae (family) and g__Halarcobacter (genus) 
-
-```{r}
-#library(tidyverse)
-gtdbtkresults <- read_tsv("gtdbtk/out/gtdbtk.bac120.summary.tsv")
-```
-
-
